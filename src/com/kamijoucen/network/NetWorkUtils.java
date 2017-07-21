@@ -6,9 +6,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Created by X6TI on 2017/5/3.
- */
 public class NetWorkUtils {
 
     /**
