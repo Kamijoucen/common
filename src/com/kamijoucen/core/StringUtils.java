@@ -1,35 +1,52 @@
 package com.kamijoucen.core;
 
+import com.kamijoucen.validate.Validate;
+
 import java.util.Collection;
 import java.util.Iterator;
 
 public class StringUtils {
 
+    private static boolean isalpha(char ch) {
+        return ch > 'a' && ch < 'z' || ch > 'A' && ch < 'Z';
+    }
+
     /**
      * 字符串是否全是字母
+     *
      * @param str
      * @return
      */
     public static boolean isAlpha(String str) {
-        // TODO: 2017/8/8
-        return true;
+        Validate.notNull(str);
+        int len = str.length();
+        boolean flag = true;
+        for (; --len >= 0 && flag; ) {
+            char ch = str.charAt(len);
+            flag = isalpha(ch);
+        }
+        return flag;
     }
 
     /**
      * str是否是空白符
+     *
      * @param str
      * @return
      */
     public static boolean isSpace(String str) {
-        return str.trim() == "";
+        Validate.notNull(str);
+        return "".equals(str.trim());
     }
 
     /**
      * 判断字符串是否是数字
+     *
      * @param str
      * @return
      */
     public static boolean isDigit(String str) {
+        Validate.notNull(str);
         int len = str.length();
         boolean flag = true;
         for (; --len >= 0 && flag; ) {
