@@ -6,6 +6,40 @@ import java.util.Iterator;
 public class StringUtils {
 
     /**
+     * 字符串是否全是字母
+     * @param str
+     * @return
+     */
+    public static boolean isAlpha(String str) {
+        // TODO: 2017/8/8
+        return true;
+    }
+
+    /**
+     * str是否是空白符
+     * @param str
+     * @return
+     */
+    public static boolean isSpace(String str) {
+        return str.trim() == "";
+    }
+
+    /**
+     * 判断字符串是否是数字
+     * @param str
+     * @return
+     */
+    public static boolean isDigit(String str) {
+        int len = str.length();
+        boolean flag = true;
+        for (; --len >= 0 && flag; ) {
+            char ch = str.charAt(len);
+            flag = Character.isDigit(ch);
+        }
+        return flag;
+    }
+
+    /**
      * 使用分隔符连接字符串
      *
      * @param separate
