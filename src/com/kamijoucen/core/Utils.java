@@ -12,7 +12,7 @@ public final class Utils {
      * @return
      */
     public static boolean orEquals(Object obj, Object... objs) {
-        if (obj == null || CollectionUtils.isEmptyArray(objs)) {
+        if (obj == null || CollecUtils.isEmptyArray(objs)) {
             return false;
         }
         boolean success = false;
@@ -45,7 +45,7 @@ public final class Utils {
      * @param t
      * @return
      */
-    public static boolean isNotBlank(Object t) {
+    public static boolean isNotBlankVal(Object t) {
         return !isBlankVal(t);
     }
 
@@ -70,7 +70,7 @@ public final class Utils {
      * @param objs
      * @return
      */
-    public static boolean isAndBlank(Object... objs) {
+    public static boolean isAndBlankVal(Object... objs) {
         boolean isNull = true;
         for (Object o : objs) {
             isNull = isNull && isBlankVal(o);
@@ -84,10 +84,10 @@ public final class Utils {
      * @param objs
      * @return
      */
-    public static boolean isAndNotBlank(Object... objs) {
+    public static boolean isAndNotBlankVal(Object... objs) {
         boolean isNotNull = true;
         for (Object o : objs) {
-            isNotNull = isNotNull && isNotBlank(o);
+            isNotNull = isNotNull && isNotBlankVal(o);
         }
         return isNotNull;
     }
@@ -98,7 +98,7 @@ public final class Utils {
      * @param objs
      * @return
      */
-    public static boolean isOrBlank(Object... objs) {
+    public static boolean isOrBlankVal(Object... objs) {
         boolean isNull = false;
         for (Object o : objs) {
             isNull = isNull || isBlankVal(o);

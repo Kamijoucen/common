@@ -2,7 +2,7 @@ package com.kamijoucen.core;
 
 import java.util.*;
 
-public class CollectionUtils {
+public class CollecUtils {
 
     /**
      * 获取一个只读的空list

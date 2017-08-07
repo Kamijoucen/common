@@ -1,6 +1,6 @@
 package com.kamijoucen.content;
 
-import com.kamijoucen.core.CollectionUtils;
+import com.kamijoucen.core.CollecUtils;
 
 import java.util.Map;
 
@@ -14,7 +14,7 @@ public class LocalScope {
     public static void put(String key, Object val) {
         Map<String, Object> map = threadLocal.get();
         if (map == null) {
-            map = CollectionUtils.map();
+            map = CollecUtils.map();
             threadLocal.set(map);
         }
         map.put(key, val);
