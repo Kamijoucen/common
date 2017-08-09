@@ -1,8 +1,52 @@
-package com.kamijoucen.core;
+package com.kamijoucen.utils;
+
+import com.kamijoucen.core.QueryCallBack;
+import com.kamijoucen.validate.Validate;
 
 import java.util.*;
 
 public class CollecUtils {
+
+    /**
+     * 根据查询规则从集合中查询符合规则的对象
+     * @param coll
+     * @param callBack
+     * @param <T>
+     * @return
+     */
+    public static <T> List<T> finds(Collection<T> coll, QueryCallBack<T> callBack) {
+        Validate.notNull(coll);
+        Validate.notNull(callBack);
+        List<T> list = list();
+        Iterator<T> iter = coll.iterator();
+        for (; iter.hasNext(); ) {
+            T t = iter.next();
+            if (callBack.query(t)) {
+                list.add(t);
+            }
+        }
+        return list;
+    }
+
+    /**
+     * 根据查询规则从集合中查询第一个符合规则的对象
+     * @param coll
+     * @param callBack
+     * @param <T>
+     * @return
+     */
+    public static <T> T find(Collection<T> coll, QueryCallBack<T> callBack) {
+        Validate.notNull(coll);
+        Validate.notNull(callBack);
+        Iterator<T> iter = coll.iterator();
+        for (; iter.hasNext(); ) {
+            T t = iter.next();
+            if (callBack.query(t)) {
+                return t;
+            }
+        }
+        return null;
+    }
 
     /**
      * 获取一个只读的空list

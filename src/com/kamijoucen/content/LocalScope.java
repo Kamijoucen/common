@@ -1,6 +1,6 @@
 package com.kamijoucen.content;
 
-import com.kamijoucen.core.CollecUtils;
+import com.kamijoucen.utils.CollecUtils;
 
 import java.util.Map;
 

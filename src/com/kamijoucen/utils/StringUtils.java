@@ -1,4 +1,4 @@
-package com.kamijoucen.core;
+package com.kamijoucen.utils;
 
 import com.kamijoucen.validate.Validate;
 
@@ -7,8 +7,23 @@ import java.util.Iterator;
 
 public class StringUtils {
 
+    /**
+     * 字符是否是英文字母
+     * @param ch
+     * @return
+     */
     private static boolean isalpha(char ch) {
         return ch > 'a' && ch < 'z' || ch > 'A' && ch < 'Z';
+    }
+
+    /**
+     * 比较字符串是否相等，null与任何比较都为false
+     * @param s1
+     * @param s2
+     * @return
+     */
+    public static boolean equals(String s1, String s2) {
+        return (s1 != null && s2 != null) && (s1 == s2 || s1.equals(s2));
     }
 
     /**
@@ -40,7 +55,7 @@ public class StringUtils {
     }
 
     /**
-     * 判断字符串是否是数字
+     * 判断字符串是否是十进制数字
      *
      * @param str
      * @return

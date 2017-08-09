@@ -1,6 +1,6 @@
 package com.kamijoucen.validate;
 
-import com.kamijoucen.core.Utils;
+import com.kamijoucen.utils.Utils;
 
 public class Validate {
 

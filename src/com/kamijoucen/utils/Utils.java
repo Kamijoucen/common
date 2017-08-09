@@ -1,8 +1,9 @@
-package com.kamijoucen.core;
+package com.kamijoucen.utils;
 
 import java.util.*;
 
 public final class Utils {
+
 
     /**
      * 判断对象是否与列表中任意一个对象相等
