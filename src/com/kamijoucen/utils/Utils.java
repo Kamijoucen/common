@@ -4,6 +4,26 @@ import java.util.*;
 
 public final class Utils {
 
+    /**
+     * 类型转换
+     * @param o
+     * @param c
+     * @param <T>
+     * @return
+     */
+    public static <T> T cast(Object o, Class<T> c) {
+        return (T) o;
+    }
+
+    /**
+     * 转换类型
+     * @param o
+     * @param <T>
+     * @return
+     */
+    public static <T> T cast(Object o) {
+        return (T) o;
+    }
 
     /**
      * 判断对象是否与列表中任意一个对象相等
