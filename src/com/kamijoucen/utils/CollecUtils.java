@@ -1,11 +1,28 @@
 package com.kamijoucen.utils;
 
+import com.kamijoucen.core.ConvertCallBack;
 import com.kamijoucen.core.QueryCallBack;
 import com.kamijoucen.validate.Validate;
 
 import java.util.*;
 
 public class CollecUtils {
+
+    /**
+     * 根据回掉转换类型
+     * @param coll
+     * @param call
+     * @param <O>
+     * @param <V>
+     * @return
+     */
+    public static <O, V> List<V> convertList(Collection<O> coll, ConvertCallBack<O, V> call) {
+        List<V> list = list();
+        for (O o : coll) {
+            list.add(call.convert(o));
+        }
+        return list;
+    }
 
     /**
      * 根据查询规则从集合中查询符合规则的对象
