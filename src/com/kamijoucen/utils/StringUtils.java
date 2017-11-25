@@ -8,15 +8,6 @@ import java.util.Iterator;
 public class StringUtils {
 
     /**
-     * 字符是否是英文字母
-     * @param ch
-     * @return
-     */
-    private static boolean isalpha(char ch) {
-        return ch > 'a' && ch < 'z' || ch > 'A' && ch < 'Z';
-    }
-
-    /**
      * 比较字符串是否相等，null与任何比较都为false
      * @param s1
      * @param s2
@@ -33,15 +24,27 @@ public class StringUtils {
      * @return
      */
     public static boolean isAlpha(String str) {
-        Validate.notNull(str);
+        if (Utils.isBlankVal(str)) {
+            return false;
+        }
         int len = str.length();
         boolean flag = true;
         for (; --len >= 0 && flag; ) {
             char ch = str.charAt(len);
-            flag = isalpha(ch);
+            flag = isAlpha(ch);
         }
         return flag;
     }
+
+    /**
+     * 字符是否是英文字母
+     * @param ch
+     * @return
+     */
+    public static boolean isAlpha(char ch) {
+        return ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z';
+    }
+
 
     /**
      * str是否是空白符
@@ -50,7 +53,9 @@ public class StringUtils {
      * @return
      */
     public static boolean isSpace(String str) {
-        Validate.notNull(str);
+        if (str == null) {
+            return false;
+        }
         return "".equals(str.trim());
     }
 
@@ -61,7 +66,9 @@ public class StringUtils {
      * @return
      */
     public static boolean isDigit(String str) {
-        Validate.notNull(str);
+        if (Utils.isBlankVal(str)) {
+            return false;
+        }
         int len = str.length();
         boolean flag = true;
         for (; --len >= 0 && flag; ) {
@@ -125,7 +132,7 @@ public class StringUtils {
      * @return
      */
     public static String joinString(String... strs) {
-        if (strs == null || strs.length == 0) {
+        if (CollecUtils.isEmptyArray(strs)) {
             return "";
         }
         StringBuilder builder = new StringBuilder();

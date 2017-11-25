@@ -9,7 +9,7 @@ import java.util.*;
 public class CollecUtils {
 
     /**
-     * 根据回掉转换类型
+     * 根据回调转换类型
      * @param coll
      * @param call
      * @param <O>
@@ -150,7 +150,7 @@ public class CollecUtils {
      * @param <T>
      * @return
      */
-    public static <T> T getLastObj(List<T> list) {
+    public static <T> T lastObj(List<T> list) {
         int size = list.size();
         if (size == 0) {
             return null;

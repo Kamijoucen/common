@@ -26,25 +26,6 @@ public final class Utils {
     }
 
     /**
-     * 判断对象是否与列表中任意一个对象相等
-     *
-     * @param obj
-     * @param objs
-     * @return
-     */
-    public static boolean orEquals(Object obj, Object... objs) {
-        if (obj == null || CollecUtils.isEmptyArray(objs)) {
-            return false;
-        }
-        boolean success = false;
-        int len = objs.length;
-        for (int i = 0; i < len && !success; i++) {
-            success = obj.equals(objs[i]);
-        }
-        return success;
-    }
-
-    /**
      * 判断对象是否为空
      * isBlank(null) == true
      * isBlank("lisicen") == false
@@ -164,6 +145,25 @@ public final class Utils {
             }
         }
         return !flag;
+    }
+
+    /**
+     * 判断对象是否与列表中任意一个对象相等
+     *
+     * @param obj
+     * @param objs
+     * @return
+     */
+    public static boolean orEquals(Object obj, Object... objs) {
+        if (obj == null || CollecUtils.isEmptyArray(objs)) {
+            return false;
+        }
+        boolean success = false;
+        int len = objs.length;
+        for (int i = 0; i < len && !success; i++) {
+            success = obj.equals(objs[i]);
+        }
+        return success;
     }
 
 }
