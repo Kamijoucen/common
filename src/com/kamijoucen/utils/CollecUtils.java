@@ -207,4 +207,22 @@ public class CollecUtils {
         return con[0];
     }
 
+    /**
+     * 返回列表第 i 个元素 (从 0 开始)
+     * @param list
+     * @param i
+     * @param <T>
+     * @return
+     */
+    public static <T> T getListObj(List<T> list, int i) {
+        if (i < 0 || isEmptyCollection(list)) {
+            return null;
+        }
+        int size = list.size();
+        if (i >= size) {
+            return null;
+        }
+        return list.get(i);
+    }
+
 }

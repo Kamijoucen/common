@@ -53,7 +53,7 @@ public final class Utils {
 
     /**
      * 如果 obj 为空则返回默认值， 否则返回 defval
-     *
+     * (空串也为空)
      * @param obj
      * @param defVal
      * @param <T>
@@ -61,6 +61,17 @@ public final class Utils {
      */
     public static <T> T blankDefVal(T obj, T defVal) {
         return isBlankVal(obj) ? defVal : obj;
+    }
+
+    /**
+     * 如果 obj 为空则返回默认值， 否则返回 defval
+     * @param obj
+     * @param defVal
+     * @param <T>
+     * @return
+     */
+    public static <T> T nullDefVal(T obj, T defVal) {
+        return obj == null ? defVal : obj;
     }
 
     /**

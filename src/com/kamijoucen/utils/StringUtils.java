@@ -111,7 +111,7 @@ public class StringUtils {
         if (collection == null || collection.size() == 0) {
             return "";
         }
-        separate = Utils.blankDefVal(separate, "");
+        separate = separate == null ? "" : separate;
         StringBuilder builder = new StringBuilder();
         int loopSize = collection.size() - 1;
         Iterator<T> iter = collection.iterator();
