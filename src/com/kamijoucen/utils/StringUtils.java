@@ -1,6 +1,5 @@
 package com.kamijoucen.utils;
 
-import com.kamijoucen.validate.Validate;
 
 import java.util.Collection;
 import java.util.Iterator;

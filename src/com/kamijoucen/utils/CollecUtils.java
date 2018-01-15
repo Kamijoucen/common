@@ -1,7 +1,7 @@
 package com.kamijoucen.utils;
 
-import com.kamijoucen.core.ConvertCallBack;
-import com.kamijoucen.core.QueryCallBack;
+import com.kamijoucen.callback.Convert;
+import com.kamijoucen.callback.Query;
 import com.kamijoucen.validate.Validate;
 
 import java.util.*;
@@ -16,7 +16,7 @@ public class CollecUtils {
      * @param <V>
      * @return
      */
-    public static <O, V> List<V> convertList(Collection<O> coll, ConvertCallBack<O, V> call) {
+    public static <O, V> List<V> convertList(Collection<O> coll, Convert<O, V> call) {
         List<V> list = list();
         for (O o : coll) {
             list.add(call.convert(o));
@@ -31,7 +31,7 @@ public class CollecUtils {
      * @param <T>
      * @return
      */
-    public static <T> List<T> finds(Collection<T> coll, QueryCallBack<T> callBack) {
+    public static <T> List<T> finds(Collection<T> coll, Query<T> callBack) {
         Validate.notNull(coll);
         Validate.notNull(callBack);
         List<T> list = list();
@@ -52,7 +52,7 @@ public class CollecUtils {
      * @param <T>
      * @return
      */
-    public static <T> T find(Collection<T> coll, QueryCallBack<T> callBack) {
+    public static <T> T find(Collection<T> coll, Query<T> callBack) {
         Validate.notNull(coll);
         Validate.notNull(callBack);
         Iterator<T> iter = coll.iterator();
@@ -124,7 +124,12 @@ public class CollecUtils {
      */
     public static <T> List<T> list(T... objs) {
         List<T> list = list();
-        list.addAll(Arrays.asList(objs));
+        if (objs == null) {
+            return list;
+        }
+        for (T o : objs) {
+            list.add(o);
+        }
         return list;
     }
 

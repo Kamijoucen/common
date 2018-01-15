@@ -1,8 +1,17 @@
 package com.kamijoucen.validate;
 
+import com.kamijoucen.utils.CollecUtils;
 import com.kamijoucen.utils.Utils;
 
+import java.util.Collection;
+
 public class Validate {
+
+    public static void notNullAndEmptyCollection(Collection collection) {
+        if (collection == null || CollecUtils.isEmptyCollection(collection)) {
+            throw new NullPointerException("对象不能为空");
+        }
+    }
 
     public static void notBlankVal(Object obj) {
         if (Utils.isBlankVal(obj)) {
