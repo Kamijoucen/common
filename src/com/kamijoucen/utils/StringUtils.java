@@ -6,6 +6,7 @@ import java.util.Iterator;
 
 public class StringUtils {
 
+
     /**
      * 比较字符串是否相等，null与任何比较都为false
      * @param s1
