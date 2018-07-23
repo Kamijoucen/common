@@ -8,16 +8,15 @@ import java.util.Set;
 
 public class NetWorkUtils {
 
-    /**
-     * 将map数据转换成url参数
-     * @param prop
-     * @return
-     */
-    public static String conversionUrlParam(Map<String, String> prop) {
+
+    public static String conversionUrlParam(Map<String, String> prop, boolean isinner) {
         if (prop == null || prop.isEmpty()) {
             return "";
         }
-        StringBuilder builder = new StringBuilder().append("?");
+        StringBuilder builder = new StringBuilder();
+        if (isinner) {
+            builder.append("?");
+        }
         Set<Map.Entry<String, String>> entries = prop.entrySet();
         final int loopSize = entries.size() - 1;
         Iterator<Map.Entry<String, String>> iter = entries.iterator();
@@ -28,6 +27,16 @@ public class NetWorkUtils {
         Map.Entry<String, String> entry = iter.next();
         builder.append(entry.getKey()).append("=").append(entry.getValue());
         return builder.toString();
+    }
+
+
+    /**
+     * 将map数据转换成url参数
+     * @param prop
+     * @return
+     */
+    public static String conversionUrlParam(Map<String, String> prop) {
+        return conversionUrlParam(prop, true);
     }
 
 //    /**
