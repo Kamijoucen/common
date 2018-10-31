@@ -1,4 +1,4 @@
-package com.kamijoucen.network;
+package com.kamijoucen.url;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;
@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-public class NetWorkUtils {
+public class URLUtils {
 
 
     public static String conversionUrlParam(Map<String, String> prop, boolean isinner) {
