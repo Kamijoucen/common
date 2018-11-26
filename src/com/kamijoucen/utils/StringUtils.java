@@ -79,6 +79,15 @@ public class StringUtils {
     }
 
     /**
+     * 判断字符是否是中文
+     * @param c
+     * @return
+     */
+    public static boolean isChineseChar(char c) {
+        return c >= 0x4e00 && c <= 0x9fbb;
+    }
+
+  /**
      * 使用分隔符连接字符串
      *
      * @param separate
