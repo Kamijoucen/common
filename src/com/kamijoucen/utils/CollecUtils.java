@@ -219,7 +219,7 @@ public class CollecUtils {
      * @param <T>
      * @return
      */
-    public static <T> T getListObj(List<T> list, int i) {
+    public static <T> T get(List<T> list, int i) {
         if (i < 0 || isEmptyCollection(list)) {
             return null;
         }
@@ -229,5 +229,62 @@ public class CollecUtils {
         }
         return list.get(i);
     }
+
+
+    /**
+     * 返回列表第 i 个字符 (从 0 开始)
+     * @param list
+     * @param i
+     * @return
+     */
+    public static String getString(List<String> list, int i) {
+        if (i < 0 || isEmptyCollection(list)) {
+            return "";
+        }
+        int size = list.size();
+        if (i >= size) {
+            return "";
+        }
+        String s = list.get(i);
+        return s == null ? "" : s;
+    }
+
+
+    /**
+     * 返回列表第 i 个元素 (从 0 开始)
+     * @param arr
+     * @param i
+     * @param <T>
+     * @return
+     */
+    public static <T> T get(T[] arr, int i) {
+        if (i < 0 || isEmptyArray(arr)) {
+            return null;
+        }
+        int size = arr.length;
+        if (i >= size) {
+            return null;
+        }
+        return arr[i];
+    }
+
+    /**
+     * 返回列表第 i 个字符 (从 0 开始)
+     * @param arr
+     * @param i
+     * @return
+     */
+    public static String getString(String[] arr, int i) {
+        if (i < 0 || isEmptyArray(arr)) {
+            return "";
+        }
+        int size = arr.length;
+        if (i >= size) {
+            return "";
+        }
+        String s = arr[i];
+        return s == null ? "" : s;
+    }
+
 
 }
