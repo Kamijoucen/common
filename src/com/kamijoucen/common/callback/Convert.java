@@ -1,4 +1,4 @@
-package com.kamijoucen.callback;
+package com.kamijoucen.common.callback;
 
 public interface Convert<O, V> {
 

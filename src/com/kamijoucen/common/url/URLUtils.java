@@ -1,4 +1,4 @@
-package com.kamijoucen.url;
+package com.kamijoucen.common.url;
 
 import java.net.InetAddress;
 import java.net.UnknownHostException;

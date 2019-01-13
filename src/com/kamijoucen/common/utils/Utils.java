@@ -1,4 +1,4 @@
-package com.kamijoucen.utils;
+package com.kamijoucen.common.utils;
 
 import java.security.MessageDigest;
 import java.util.*;

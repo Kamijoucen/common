@@ -1,8 +1,8 @@
-package com.kamijoucen.utils;
+package com.kamijoucen.common.utils;
 
-import com.kamijoucen.callback.Convert;
-import com.kamijoucen.callback.Query;
-import com.kamijoucen.validate.Validate;
+import com.kamijoucen.common.callback.Convert;
+import com.kamijoucen.common.callback.Query;
+import com.kamijoucen.common.validate.Validate;
 
 import java.util.*;
 

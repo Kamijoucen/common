@@ -1,7 +1,7 @@
-package com.kamijoucen.validate;
+package com.kamijoucen.common.validate;
 
-import com.kamijoucen.utils.CollecUtils;
-import com.kamijoucen.utils.Utils;
+import com.kamijoucen.common.utils.CollecUtils;
+import com.kamijoucen.common.utils.Utils;
 
 import java.util.Collection;
 
