@@ -113,11 +113,11 @@ public final class Utils {
      * @return
      */
     public static boolean isOrBlankVal(Object... objs) {
-        boolean isNull = false;
-        for (Object o : objs) {
-            isNull = isNull || isBlankVal(o);
+        boolean isAnyNull = false;
+        for (int i = 0; i < objs.length && !isAnyNull; ++i) {
+            isAnyNull = isBlankVal(objs[i]);
         }
-        return isNull;
+        return isAnyNull;
     }
 
     /**
