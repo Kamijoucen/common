@@ -85,6 +85,9 @@ public final class Utils {
      * @return
      */
     public static boolean isAndBlankVal(Object... objs) {
+        if (CollecUtils.isEmptyArray(objs)) {
+            return true;
+        }
         boolean isNull = true;
         for (Object o : objs) {
             isNull = isNull && isBlankVal(o);
@@ -99,6 +102,9 @@ public final class Utils {
      * @return
      */
     public static boolean isAndNotBlankVal(Object... objs) {
+        if (CollecUtils.isEmptyArray(objs)) {
+            return false;
+        }
         boolean isNotNull = true;
         for (Object o : objs) {
             isNotNull = isNotNull && isNotBlankVal(o);
@@ -113,6 +119,9 @@ public final class Utils {
      * @return
      */
     public static boolean isOrBlankVal(Object... objs) {
+        if (CollecUtils.isEmptyArray(objs)) {
+            return true;
+        }
         boolean isAnyNull = false;
         for (int i = 0; i < objs.length && !isAnyNull; ++i) {
             isAnyNull = isBlankVal(objs[i]);
@@ -126,6 +135,9 @@ public final class Utils {
      * @return
      */
     public static boolean isOrNotBlankVal(Object... objs) {
+        if (CollecUtils.isEmptyArray(objs)) {
+            return false;
+        }
         boolean isBlank = true;
 
         for (int i = 0; i < objs.length && isBlank; ++i) {
@@ -157,6 +169,7 @@ public final class Utils {
 
     /**
      * 只要lists中任意一个value与key相同返回真
+     * null与任何比较都为false
      *
      * @param key
      * @param lists
@@ -164,6 +177,9 @@ public final class Utils {
      * @return
      */
     public static <T extends Object> boolean equalsOrList(T key, List<T> lists) {
+        if (key == null || CollecUtils.isEmptyCollection(lists)) {
+            return false;
+        }
         boolean flag = true;
         for (int i = 0; i < lists.size() && flag; ++i) {
             if (key.equals(lists.get(i))) {
