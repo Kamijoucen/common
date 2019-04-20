@@ -17,6 +17,8 @@ public class CollecUtils {
      * @return
      */
     public static <O, V> List<V> convertList(Collection<O> coll, Convert<O, V> call) {
+        Validate.notNull(coll);
+        Validate.notNull(call);
         List<V> list = list();
         for (O o : coll) {
             list.add(call.convert(o));
