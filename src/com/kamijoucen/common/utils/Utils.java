@@ -105,11 +105,12 @@ public final class Utils {
         if (CollecUtils.isEmptyArray(objs)) {
             return false;
         }
-        boolean isNotNull = true;
         for (Object o : objs) {
-            isNotNull = isNotNull && isNotBlankVal(o);
+            if (isBlankVal(o)) {
+                return false;
+            }
         }
-        return isNotNull;
+        return true;
     }
 
     /**
