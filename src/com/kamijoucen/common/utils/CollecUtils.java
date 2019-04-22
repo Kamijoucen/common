@@ -86,6 +86,7 @@ public class CollecUtils {
      * @return
      */
     public static <K, V> Map<K, V> map(Object... kvs) {
+        Validate.notNull(kvs);
         Map<K, V> map = map();
         int len = kvs.length;
         for (int i = 0; i < len && (i + 1) < len; i += 2) {
@@ -125,10 +126,10 @@ public class CollecUtils {
      * @return
      */
     public static <T> List<T> list(T... objs) {
-        List<T> list = list();
-        if (objs == null) {
-            return list;
+        if (isEmptyArray(objs)) {
+            return readOnlyList();
         }
+        List<T> list = list();
         for (T o : objs) {
             list.add(o);
         }

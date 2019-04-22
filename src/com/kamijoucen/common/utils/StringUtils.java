@@ -69,13 +69,23 @@ public class StringUtils {
         if (Utils.isBlankVal(str)) {
             return false;
         }
-        int len = str.length();
-        boolean flag = true;
-        for (; --len >= 0 && flag; ) {
-            char ch = str.charAt(len);
-            flag = Character.isDigit(ch);
+        int indx = 0;
+        char s1 = str.charAt(0);
+        if (!Character.isDigit(s1)) {
+            if (s1 == '-' || s1 == '+') {
+                ++indx;
+            } else {
+                return false;
+            }
         }
-        return flag;
+        int len = str.length();
+        for (; indx < len; ++indx) {
+            char ch = str.charAt(indx);
+            if (!Character.isDigit(ch)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     /**
