@@ -17,7 +17,7 @@ public final class Utils {
     }
 
     /**
-     * 转换类型
+     * 转换类型 （根据返回值推导泛型<T>的类型，仅在JDK1.8+有效）
      * @param o
      * @param <T>
      * @return
